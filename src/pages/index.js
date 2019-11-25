@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import ImageContainer from '../components/image'
+import HeroImage from '../components/HeroImage'
 
 const IndexPage = ({ data }) => {
   const { childImageSharp } = data.file
@@ -12,7 +12,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <ImageContainer fluid={childImageSharp.fluid} />
+      <HeroImage fluid={childImageSharp.fluid} />
+      <h1>Nyt Perspektiv På Krop og Sjæl</h1>
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>

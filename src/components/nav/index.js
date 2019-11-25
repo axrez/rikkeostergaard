@@ -5,13 +5,8 @@ import Image from 'gatsby-image'
 import styled from 'styled-components'
 
 const Nav = ({ top, frontpage }) => {
-  const { site, logo } = useStaticQuery(graphql`
+  const { logo } = useStaticQuery(graphql`
     query NavInfo {
-      site {
-        siteMetadata {
-          title
-        }
-      }
       logo: file(relativePath: { eq: "logo-m-text.png" }) {
         childImageSharp {
           fluid(maxWidth: 900) {
@@ -40,28 +35,36 @@ const Nav = ({ top, frontpage }) => {
 
 const NavWrapper = styled.header`
   width: 100%;
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
   position: fixed;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
+  grid-template-columns:
+    calc((100% - 1440px) / 2)
+    1fr auto
+    calc((100% - 1440px) / 2);
+  grid-template-areas: 'lspace logo links rspace';
+  align-items: flex-start;
 
   & a {
     display: block;
     width: 25rem;
+    grid-area: logo;
   }
 `
 
 const NavLinks = styled.nav`
-  color: #111;
+  color: #373736;
   display: flex;
+  grid-area: links;
 
   & a {
     color: inherit;
     text-decoration: none;
     width: fit-content;
     padding: 0.5rem;
+    grid-area: inherit;
   }
 `
 
