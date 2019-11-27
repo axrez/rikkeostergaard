@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Nav = ({ top, frontpage }) => {
   const { logo } = useStaticQuery(graphql`
@@ -18,7 +18,7 @@ const Nav = ({ top, frontpage }) => {
   `)
 
   return (
-    <NavWrapper>
+    <NavWrapper top={top}>
       <Link to="/">
         <Image fluid={logo.childImageSharp.fluid} />
       </Link>
@@ -46,12 +46,20 @@ const NavWrapper = styled.header`
     calc((100% - 1440px) / 2);
   grid-template-areas: 'lspace logo links rspace';
   align-items: flex-start;
+  transition: all 200ms ease-in-out;
 
   & a {
     display: block;
     width: 25rem;
     grid-area: logo;
   }
+
+  ${props =>
+    !props.top &&
+    css`
+      background: white;
+      box-shadow: var(--shadow);
+    `}
 `
 
 const NavLinks = styled.nav`

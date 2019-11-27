@@ -12,7 +12,7 @@ const HeroImage = props => (
 const ImageOverlay = styled.div`
   position: absolute;
   z-index: 1;
-  background: #b3d6ce;
+  background: var(--secondary);
   opacity: 0.5;
 `
 
