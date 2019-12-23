@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import HeroImage from "../components/HeroImage"
+import Benefits from "../components/frontpage/benefits"
 
 const IndexPage = ({ data }) => {
   const { childImageSharp } = data.file
@@ -16,10 +17,9 @@ const IndexPage = ({ data }) => {
       <HeroImage fluid={childImageSharp.fluid} />
       <HeroContent>
         <HeroText>Nyt Perspektiv På Krop og Sind</HeroText>
-        <HeroCTA to="/om">Læs mere</HeroCTA>
+        <HeroCTA to="/om">Bestil tid</HeroCTA>
       </HeroContent>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
+      <Benefits />
     </Layout>
   )
 }
@@ -50,16 +50,17 @@ const HeroContent = styled.div`
 
 const HeroText = styled.h1`
   color: var(--primary);
+  font-weight: 400;
 `
 
 const HeroCTA = styled(Link)`
   background: var(--accent);
   text-decoration: none;
   color: inherit;
-  border-radius: 20px;
-  padding: 1rem;
+  padding: 0.8rem 2.3rem;
   position: relative;
   top: 1.5rem;
+  box-shadow: var(--shadow);
 `
 
 export default IndexPage
