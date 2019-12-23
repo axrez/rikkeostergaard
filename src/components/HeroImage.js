@@ -1,6 +1,6 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
+import React from "react"
+import Img from "gatsby-image"
+import styled from "styled-components"
 
 const HeroImage = props => (
   <ImageWrapper>
@@ -18,6 +18,7 @@ const ImageOverlay = styled.div`
 
 const ImageWrapper = styled.div`
   justify-self: center;
+  clip-path: ellipse(100% 82% at 50% 17%);
   div {
     width: 100%;
     max-height: 85vh;
