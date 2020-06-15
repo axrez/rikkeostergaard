@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import Image from 'gatsby-image'
-import styled, { css } from 'styled-components'
+import React from "react"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import Image from "gatsby-image"
+import styled, { css } from "styled-components"
 
 const Nav = ({ top, frontpage }) => {
   const { logo } = useStaticQuery(graphql`
@@ -38,13 +38,13 @@ const NavWrapper = styled.header`
   margin: 0 auto;
   padding: 1.5rem 1rem;
   position: fixed;
-  z-index: 2;
+  z-index: 15;
   display: grid;
   grid-template-columns:
     calc((100% - 1440px) / 2)
     1fr auto
     calc((100% - 1440px) / 2);
-  grid-template-areas: 'lspace logo links rspace';
+  grid-template-areas: "lspace logo links rspace";
   align-items: flex-start;
   transition: all 200ms ease-in-out;
 
