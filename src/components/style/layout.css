@@ -13,4 +13,7 @@ html {
   --primary: orangered;
   --accent: #ca6f4e;
   --secondary: #b3d6ce;
+  --flat: #EEEEEE;
+
+  background: var(--flat);
 }
