@@ -8,7 +8,6 @@ const HeroImage = props => (
     <Img {...props} />
   </ImageWrapper>
 )
-
 const ImageOverlay = styled.div`
   position: absolute;
   z-index: 1;
@@ -19,9 +18,11 @@ const ImageOverlay = styled.div`
 const ImageWrapper = styled.div`
   justify-self: center;
   div {
+    clip-path: ellipse(100% 55% at 50% 37%);
     width: 100%;
     max-height: 85vh;
     height: 85vh;
+    box-shadow: var(--shadow);
   }
 `
 
