@@ -1,12 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
-import HeroImage from "../components/HeroImage"
-import Benefits from "../components/frontpage/benefits"
+import Layout from '../components/Layout'
+import SEO from '../components/seo'
+import HeroImage from '../components/HeroImage'
+import Benefits from '../components/frontpage/benefits'
+import Statements from '../components/frontpage/statements'
+import CallToAction from '../components/frontpage/callToAction'
 
 const IndexPage = ({ data }) => {
   const { childImageSharp } = data.file
@@ -20,6 +22,8 @@ const IndexPage = ({ data }) => {
         <HeroCTA to="/om">Bestil tid</HeroCTA>
       </HeroContent>
       <Benefits />
+      <Statements />
+      <CallToAction />
     </Layout>
   )
 }
