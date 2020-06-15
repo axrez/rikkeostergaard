@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import Img from "gatsby-image"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components'
 
-import Nav from "./nav"
-import { useScrollPosition } from "../utils/useScrollPosition"
-import "./style/layout.css"
+import Nav from './nav'
+import { useScrollPosition } from '../utils/useScrollPosition'
+import './style/layout.css'
 
 const Footer = styled.footer`
   background: var(--dark);
@@ -34,6 +34,18 @@ const Footer = styled.footer`
   & span > p {
     margin: 0.2rem;
     text-align: start;
+  }
+`
+
+const query = graphql`
+  query FooterLogo {
+    logo: file(relativePath: { eq: "logo-u-txt.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 
@@ -75,18 +87,6 @@ const Layout = ({ children, frontpage = false }) => {
     </>
   )
 }
-
-const query = graphql`
-  query FooterLogo {
-    logo: file(relativePath: { eq: "logo-u-txt.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
