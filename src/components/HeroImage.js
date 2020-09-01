@@ -24,6 +24,7 @@ const ImageWrapper = styled.div`
     max-height: 85vh;
     height: 85vh;
     box-shadow: var(--shadow);
+    // drop-shadow
   }
 `
 
